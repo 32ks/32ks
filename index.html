@@ -1,185 +1,304 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Welcome to 32k.xyz
-    </title>
-    <meta name="TITLE" content="32k.xyz Minecraft Server">
-    <meta name="DESCRIPTION" content="Join the 32k.xyz Minecraft Server for an unforgettable experience with console to PC crossplay, custom weapons, Towny, clans, economy, and more!">
-    <meta name="KEYWORDS" content="Minecraft, server, 32k.xyz, crossplay, bedrock java crossplay, guns, Towny, clans, GeyserMC, economy, Brewery, MCMMO, Minecraft 1.7–1.21, 1.7, 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.20, 1.21">
-    <meta name="rating" content="General">
-    <meta http-equiv="content-language" content="en">
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join 32k.xyz Minecraft Server for crossplay, custom weapons, guns, economy, Towny, and more! Play on PC, Console, and Bedrock.">
+    <meta name="keywords" content="Minecraft, server, 32k.xyz, crossplay, PC, Console, Bedrock, custom weapons, guns, economy, Towny, clans, MCMMO, voting">
+    <meta name="author" content="32k.xyz">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="32k.xyz Minecraft Server">
+    <meta property="og:description" content="Join the 32k.xyz Minecraft Server for a unique experience with crossplay, custom weapons, and more!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/32ks/32ks/main/icon.ico">
+    <meta property="og:url" content="https://32k.xyz">
+    <meta name="twitter:title" content="32k.xyz Minecraft Server">
+    <meta name="twitter:description" content="Join the 32k.xyz Minecraft Server with custom features like crossplay, Towny, and more.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/32ks/32ks/main/icon.ico">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>32k.xyz - Minecraft Server</title>
     <link rel="icon" href="https://raw.githubusercontent.com/32ks/32ks/main/icon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <style type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Doto&display=swap" rel="stylesheet">
+    <style>
+      
         body {
-            background-color: #000000;
-            color: #5C68DC;
-            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            font-family: "Courier", monospace;
+            color: #FFC84E;
+            background: url('background.jpg') repeat;
+            background-color: #0C0011; 
+            overflow-x: hidden;
+            position: relative;
         }
 
-        .main {
-            position: relative;
-            width: 100%;
-            margin: 18px auto;
-            text-align: center;
+        
+        @keyframes shooting-stars {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) translateX(100vw);
+                opacity: 0;
+            }
         }
 
-        .content {
-            position: relative;
-            width: 98%;
-            max-width: 520px;
-            margin: auto;
-            font-size: 14px;
-            line-height: 130%;
-            font-family: 'Arial', sans-serif;
+        @keyframes star-trail {
+            0% {
+                opacity: 1;
+                width: 10px;
+            }
+            100% {
+                opacity: 0;
+                width: 0;
+            }
+        }
+
+        .shooting-star {
+            position: absolute;
+            font-size: 24px;
+            color: #644593;
+            opacity: 0.8;
+            animation: shooting-stars linear infinite;
+        }
+
+        .shooting-star::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 200, 78, 0.6);
+            width: 0;
+            height: 2px;
+            animation: star-trail 1s ease-out infinite;
+        }
+
+       
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #FFC84E;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(255, 200, 78, 0.5);
         }
 
         h1 {
-            color: #FEC84E;
-            font-size: 32px;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: "Doto", cursive;
+            font-size: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            color: #FFC84E;
+            text-shadow: 0 0 10px #FFC84E, 0 0 20px rgba(255, 200, 78, 0.8);
         }
 
         .section-title {
-            color: #FEC84E;
-            font-size: 28px;
-            font-family: 'Courier New', Courier, monospace;
-            margin-top: 30px;
+            font-size: 1.5rem;
+            color: #FFDB70;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .features, .how-to-join, .how-to-join-bedrock, .how-to-join-console {
-            background-color: #222;
-            padding: 10px;
-            margin-top: 20px;
-            font-size: 16px;
-            color: white; /* Ensures all these sections use white text */
-            border-radius: 5px;
+        .features, .how-to-join {
+            background: rgba(91, 103, 219, 0.2);
+            padding: 20px;
+            border: 1px solid #FFC84E;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .features:hover, .how-to-join:hover {
+            background: rgba(91, 103, 219, 0.3);
+            transform: scale(1.02);
         }
 
         .feature-item {
-            margin-bottom: 8px;
-        }
-
-        .highlight {
-            color: #4C37C8;
-            font-weight: bold;
+            margin-bottom: 10px;
+            color: #FFDB70;
         }
 
         .ip-box {
-            background-color: #222;
-            padding: 15px;
-            font-size: 20px;
-            color: #FEC84E;
-            font-family: 'Courier New', Courier, monospace;
-            margin-top: 20px;
-            border-radius: 5px;
+            font-size: 1.2rem;
             text-align: center;
+            padding: 10px;
+            background: rgba(255, 200, 78, 0.1);
+            border: 1px solid #FFC84E;
+            animation: pulse 2s infinite;
         }
 
-        .join-button {
-            background-color: #4C37C8;
-            color: white;
-            font-size: 18px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
+        @keyframes pulse {
+            0%, 100% { background-color: rgba(255, 200, 78, 0.1); }
+            50% { background-color: rgba(255, 200, 78, 0.2); }
         }
 
-        .join-button:hover {
-            background-color: #5C48D9;
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            color: #FFDB70;
+            border-top: 1px solid #FFC84E;
+        }
+
+       
+        .status {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+       
+        #server-status {
+            background-color: #25055A;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+       
+        #server-status img {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        .status-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .status-text span {
+            margin-left: 10px;
+        }
+
+       
+        .status-bar {
+            background-color: rgba(91, 103, 219, 0.5);
+            color: #FFF;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
         }
     </style>
 </head>
-
 <body>
-    <div class="main">
-        <h1>Welcome to 32k.xyz Minecraft Server</h1>
-        <div class="content">
-            <p>Experience a unique Minecraft SMP experience like no other! 32k.xyz offers a seamless blend of classic gameplay with exciting new features. Whether you're a console or PC player, everyone is welcome.</p>
-        </div>
 
-        <!-- Why Join Section -->
-        <div class="section-title">Why Join?</div>
-        <div class="features">
-            <div class="feature-item">✔️ <span class="highlight">Console to PC Crossplay</span> – Play together with friends across different platforms!</div>
-            <div class="feature-item">✔️ <span class="highlight">Custom Weapons & Guns</span> – Guns plugin and custom weapons for an exciting experience.</div>
-            <div class="feature-item">✔️ <span class="highlight">Towny</span> – Build, protect, and grow your town with others!</div>
-            <div class="feature-item">✔️ <span class="highlight">Clans</span> – Join clans, wage battles, and dominate the server with your clan.</div>
-            <div class="feature-item">✔️ <span class="highlight">Economy</span> – Buy, sell, and trade with other players using in-game currency.</div>
-            <div class="feature-item">✔️ <span class="highlight">Brewery Plugin</span> – Brew unique drinks and potions with the Brewery plugin.</div>
-            <div class="feature-item">✔️ <span class="highlight">MCMMO</span> – Level up your account and gain powerful abilities with the MCMMO plugin.</div>
-            <div class="feature-item">✔️ <span class="highlight">1.7 - 1.21 Version Support</span> – Play across nearly all Minecraft versions with no hassle.</div>
-            <div class="feature-item">✔️ <span class="highlight">24/7 Uptime</span> – Always available for you and your friends.</div>
-            <div class="feature-item">✔️ <span class="highlight">Unique Survival Experience</span> – Constant server updates and a unique semi-vanilla survival experience.</div>
+    <div id="server-status">
+        <div class="status-text">
+            <img id="status-icon" src="https://via.placeholder.com/18/00FF00/000000?text=+" alt="Status">
+            <span id="status-text">Loading Server Status...</span>
+            <span id="player-count" style="margin-left: 20px;">Players: 0</span>
         </div>
-
-        <!-- How Do I Join on Java Edition Section -->
-        <div class="section-title">How Do I Join on Java Edition?</div>
-        <div class="how-to-join">
-            <p>If you're playing on Minecraft Java Edition, follow these simple steps:</p>
-            <ul>
-                <li>1. Open Minecraft on your Java Edition client.</li>
-                <li>2. From the main menu, click on "Multiplayer".</li>
-                <li>3. Click on "Add Server".</li>
-                <li>4. Enter the following details:</li>
-                <ul>
-                    <li>Server Name: <span class="highlight">32k.xyz</span></li>
-                    <li>Server Address: <span class="highlight">32k.xyz</span></li>
-                </ul>
-                <li>5. Click "Done" and select the server from your list.</li>
-                <li>6. Click "Join Server" to play!</li>
-            </ul>
-        </div>
-
-        <!-- How Do I Join on Bedrock Edition (Windows 10/11) Section -->
-        <div class="section-title">How Do I Join on Bedrock Edition (Windows 10/11)?</div>
-        <div class="how-to-join-bedrock">
-            <p>If you're playing Minecraft Bedrock Edition on Windows 10 or 11, follow these steps to join the 32k.xyz server:</p>
-            <ul>
-                <li>1. Open Minecraft on your Bedrock device (Windows 10/11, Xbox, PS4, Mobile).</li>
-                <li>2. Click on "Play" and navigate to the "Servers" tab.</li>
-                <li>3. Click "Add Server" and enter the following details:</li>
-                <ul>
-                    <li>Server Name: <span class="highlight">32k.xyz</span></li>
-                    <li>Server Address: <span class="highlight">32k.xyz</span></li>
-                    <li>Port: <span class="highlight">19132</span></li>
-                </ul>
-                <li>4. Click "Save" and select the server from your list.</li>
-                <li>5. Click "Join Server" and enjoy playing with others!</li>
-            </ul>
-            <p>Note: Ensure you have GeyserMC configured on the server for Bedrock support. If you experience issues, check that GeyserMC is enabled and configured correctly.</p>
-        </div>
-
-        <!-- How Do I Join on Console (GeyserMC) Section -->
-        <div class="section-title">How Do I Join on Console (GeyserMC)?</div>
-        <div class="how-to-join-console">
-            <p>If you're playing Minecraft on a console (Xbox, PlayStation, etc.), follow these steps:</p>
-            <ul>
-                <li>1. Before you can join, you need to change your DNS to use custom DNS servers for joining custom Minecraft servers.</li>
-                <li>2. Watch this tutorial video to learn how to set up your DNS: <a href="https://www.youtube.com/watch?v=cJd_LWEdgVw" target="_blank">How to Set Up DNS for Custom Servers</a>.</li>
-                <li>3. After changing your DNS, open Minecraft on your console.</li>
-                <li>4. In the "Add Server" section, enter the following details:</li>
-                <ul>
-                    <li>Server Name: <span class="highlight">32k.xyz</span></li>
-                    <li>Server Address: <span class="highlight">32k.xyz</span></li>
-                    <li>Port: <span class="highlight">19132</span></li>
-                </ul>
-                <li>5. Click "Save" and select the server from your list.</li>
-                <li>6. Click "Join Server" to start playing.</li>
-            </ul>
-        </div>
-
-        <!-- Server IP Box -->
-        <div class="ip-box">
-            <p><span class="highlight">Join us today!</span><br>Server IP: <span class="highlight">32k.xyz</span></p>
-        </div>
-
-        <footer style="font-size: 12px; color: #999;">
-            <p>&copy; 2024 32k.xyz All Rights Reserved.</p>
-        </footer>
     </div>
+
+ 
+    <script>
+        const numberOfStars = 15;  
+        for (let i = 0; i < numberOfStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            star.textContent = '★';  
+            star.style.left = Math.random() * window.innerWidth + 'px';
+            star.style.top = Math.random() * window.innerHeight + 'px';
+            star.style.fontSize = (Math.random() * 10 + 15) + 'px'; 
+            star.style.animationDuration = Math.random() * 3 + 2 + 's'; 
+            star.style.animationDelay = Math.random() * 5 + 's'; 
+            document.body.appendChild(star);
+        }
+
+        
+        function updateServerStatus() {
+            fetch('https://mcapi.us/server/status?ip=32k.xyz')
+                .then(response => response.json())
+                .then(data => {
+                    const statusText = document.getElementById('status-text');
+                    const playerCount = document.getElementById('player-count');
+                    const statusIcon = document.getElementById('status-icon');
+
+                    if (data.online) {
+                        statusText.textContent = 'Server is Online';
+                        statusIcon.src = 'https://via.placeholder.com/18/00FF00/000000?text=+'; 
+                        playerCount.textContent = `Players: ${data.players.now}`;
+                    } else {
+                        statusText.textContent = 'Server is Offline';
+                        statusIcon.src = 'https://via.placeholder.com/18/FF0000/000000?text=-'; 
+                        playerCount.textContent = `Players: 0`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching server status:', error);
+                    const statusText = document.getElementById('status-text');
+                    statusText.textContent = 'Server Status Unavailable ⚠️';
+                    statusText.classList.remove('online', 'offline');
+                });
+        }
+
+        
+        updateServerStatus();
+
+        
+        setInterval(updateServerStatus, 15000); 
+    </script>
+
+    <div class="container">
+        <div>
+            <h1>Welcome to 32k.xyz</h1>
+            <div class="section-title">Why Join?</div>
+            <div class="features">
+                <p class="feature-item">✔️ Crossplay on PC, Console, and Bedrock.</p>
+                <p class="feature-item">✔️ Custom weapons and guns for intense PvP.</p>
+                <p class="feature-item">✔️ Towny system for city-building enthusiasts.</p>
+                <p class="feature-item">✔️ Economy to trade, buy, sell, and auction.</p>
+                <p class="feature-item">✔️ Clans plugin for competitive gameplay.</p>
+                <p class="feature-item">✔️ MCMMO skills and abilities for progression.</p>
+                <p class="feature-item">✔️ Play across Minecraft versions 1.7 to 1.21.</p>
+                <p class="feature-item">✔️ 24/7 uptime and a dedicated community.</p>
+            </div>
+        </div>
+
+        <div>
+            <div class="section-title">How to Join</div>
+            <div class="how-to-join">
+                <p>For Java Edition:</p>
+                <ul>
+                    <li>Open Minecraft and go to Multiplayer.</li>
+                    <li>Add Server: <span style="color: #FFC84E;">32k.xyz</span></li>
+                    <li>Join the fun!</li>
+                </ul>
+                <p>For Bedrock:</p>
+                <ul>
+                    <li>IP: <span style="color: #FFC84E;">32k.xyz</span></li>
+                    <li>Port: <span style="color: #FFC84E;">19132</span></li>
+                </ul>
+                <p>For Console (Xbox, PlayStation, etc.), follow this guide to set your DNS: <a href="https://www.youtube.com/watch?v=cJd_LWEdgVw" target="_blank">How to Set Up DNS for Custom Servers</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <iframe style="width:728px;height:90px;max-width:100%;border:none;display:block;margin:auto" src="https://namemc.com/server/32k.xyz/embed" width="728" height="90"></iframe>
+
+    
+    <div style="text-align: center; padding-top: 20px;">
+        <a href="https://minecraft-server-list.com/server/509384/">
+            <img src="https://minecraft-server-list.com/server/logo/509384.png" alt="Minecraft Server 32k Network" />
+        </a>
+    </div>
+
+    <footer>
+        <div>2025 32k.xyz 32k Network - All Rights Reserved</div>
+    </footer>
+
 </body>
 </html>
